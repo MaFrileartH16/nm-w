@@ -20,7 +20,7 @@
       User::create([
         'name' => 'Admin',
         'email' => 'admin@mail.id',
-        'password' => Hash::make('admin'),
+        'password' => Hash::make('admin@mail.id'),
       ]);
     }
   }
