@@ -25,8 +25,10 @@
     public function store(Request $request)
     {
       Barang::create([
+        'code' => $request['code'],
         'name' => $request['name'],
-        'stock' => intval($request['stock']),
+        'quantity' => intval($request['quantity']),
+        'unit' => $request['unit'],
       ]);
       
       return to_route('barang.index');

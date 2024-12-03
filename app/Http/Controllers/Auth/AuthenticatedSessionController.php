@@ -36,7 +36,7 @@
         $user = Auth::user();
         
         if ($user) {
-          return to_route('dashboard')->with('meta', [
+          return to_route('barang.index')->with('meta', [
             'status' => true,
             'title' => 'Berhasil masuk akun',
             'message' => 'Selamat datang kembali, ' . $user->name . '!'

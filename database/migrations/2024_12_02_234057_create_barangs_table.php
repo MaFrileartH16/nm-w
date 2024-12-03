@@ -12,8 +12,10 @@
     {
       Schema::create('barangs', function (Blueprint $table) {
         $table->id();
+        $table->string('code')->unique();
         $table->string('name');
-        $table->integer('stock');
+        $table->integer('quantity');
+        $table->string('unit');
         $table->timestamps();
       });
     }

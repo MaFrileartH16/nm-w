@@ -4,8 +4,10 @@ import { useForm } from '@inertiajs/react'
 
 const Index = (props) => {
   const form = useForm({
+    code: '',
     name: '',
-    stock: '',
+    quantity: '',
+    unit: '',
   })
 
   return (
@@ -20,6 +22,14 @@ const Index = (props) => {
 
         <Box p={16}>
           <TextInput
+            label="Kode"
+            onChange={(e) => {
+              const code = e.target.value
+              form.setData('code', code)
+            }}
+          />
+
+          <TextInput
             label="Nama"
             onChange={(e) => {
               const name = e.target.value
@@ -28,10 +38,18 @@ const Index = (props) => {
           />
 
           <TextInput
-            label="Stok"
+            label="Kuantitas"
             onChange={(e) => {
-              const stock = e.target.value
-              form.setData('stock', stock)
+              const quantity = e.target.value
+              form.setData('quantity', quantity)
+            }}
+          />
+
+          <TextInput
+            label="Satuan"
+            onChange={(e) => {
+              const unit = e.target.value
+              form.setData('unit', unit)
             }}
           />
         </Box>

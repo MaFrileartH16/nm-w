@@ -10,7 +10,9 @@
     use HasFactory;
     
     protected $fillable = [
+      'code',
       'name',
-      'stock',
+      'quantity',
+      'unit',
     ];
   }
