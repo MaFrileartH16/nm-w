@@ -26,7 +26,7 @@
     {
       Barang::create([
         'name' => $request['name'],
-        'price' => intval($request['price']),
+        'stock' => intval($request['stock']),
       ]);
       
       return to_route('barang.index');

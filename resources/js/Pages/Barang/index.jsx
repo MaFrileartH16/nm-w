@@ -5,6 +5,7 @@ import { router } from '@inertiajs/core'
 const Index = (props) => {
   const rows = props.items.map((element) => (
     <Table.Tr key={element.name}>
+      <Table.Td>{element.name}</Table.Td>
       <Table.Td>{element.stock}</Table.Td>
     </Table.Tr>
   ))
