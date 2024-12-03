@@ -12,6 +12,5 @@
     protected $fillable = [
       'name',
       'stock',
-      'price',
     ];
   }

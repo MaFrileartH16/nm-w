@@ -14,7 +14,6 @@
         $table->id();
         $table->string('name');
         $table->integer('stock');
-        $table->integer('price');
         $table->timestamps();
       });
     }

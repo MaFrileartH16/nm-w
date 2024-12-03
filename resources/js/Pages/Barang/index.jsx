@@ -6,7 +6,6 @@ const Index = (props) => {
   const rows = props.items.map((element) => (
     <Table.Tr key={element.name}>
       <Table.Td>{element.stock}</Table.Td>
-      <Table.Td>{element.price}</Table.Td>
     </Table.Tr>
   ))
   return (
@@ -20,7 +19,6 @@ const Index = (props) => {
           <Table.Tr>
             <Table.Th>Nama</Table.Th>
             <Table.Th>Stok</Table.Th>
-            <Table.Th>Harga</Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
