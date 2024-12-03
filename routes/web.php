@@ -1,6 +1,7 @@
 <?php
   
   use App\Http\Controllers\AthleteController;
+  use App\Http\Controllers\BarangController;
   use App\Http\Controllers\CoachController;
   use App\Http\Controllers\ExerciseController;
   use App\Http\Controllers\ProfileController;
@@ -20,6 +21,10 @@
 //        'auth' => ['user' => $authedUser]
       ]);
     })->name('dashboard');
+    
+    Route::get('/barang', [BarangController::class, 'index'])->name('barang.index');
+    Route::get('/barang/create', [BarangController::class, 'create'])->name('barang.create');
+    Route::post('/barang/store', [BarangController::class, 'store'])->name('barang.store');
     
     
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
