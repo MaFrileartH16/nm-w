@@ -71,6 +71,8 @@
      */
     public function destroy(Barang $barang)
     {
-      //
+      $barang->delete();
+      
+      return to_route('barang.index');
     }
   }

@@ -16,7 +16,8 @@ export const Header = (props) => {
   return (
     <Group h={80} justify="space-between" p={16} style={{ borderBottom: '1px solid var(--mantine-color-gray-4)' }}>
       {/*<Image w={48} src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Honda_Logo.svg" />*/}
-      <Drawer opened={opened} onClose={close} title="Authentication">
+
+      <Drawer opened={opened} onClose={close}>
         {/*<Button>Master</Button>*/}
         <Accordion>
           {groceries.map((item) => (
@@ -24,7 +25,7 @@ export const Header = (props) => {
               <Accordion.Control>{item.value}</Accordion.Control>
               <Accordion.Panel> <Flex direction="column" gap={8}>
                 <Button onClick={() => router.get(route('barang.index'))}>Barang</Button>
-             
+
               </Flex></Accordion.Panel>
 
             </Accordion.Item>))

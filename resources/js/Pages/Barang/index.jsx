@@ -1,6 +1,7 @@
 import { AppLayout } from '@/Layouts/AppLayout.jsx'
 import { Box, Button, Flex, Table } from '@mantine/core'
 import { router } from '@inertiajs/core'
+import { IconEdit, IconTrash } from '@tabler/icons-react'
 
 const Index = (props) => {
   const rows = props.items.map((element) => (
@@ -9,6 +10,12 @@ const Index = (props) => {
       <Table.Td>{element.name}</Table.Td>
       <Table.Td>{element.quantity}</Table.Td>
       <Table.Td>{element.unit}</Table.Td>
+      <Table.Td>
+        <Flex gap={16}>
+          <Button><IconEdit /></Button>
+          <Button onClick={() => router.delete(route('barang.destroy', element))}><IconTrash /></Button>
+        </Flex>
+      </Table.Td>
     </Table.Tr>
   ))
   return (
@@ -25,6 +32,7 @@ const Index = (props) => {
               <Table.Th>Nama</Table.Th>
               <Table.Th>Kuantitas</Table.Th>
               <Table.Th>Satuan</Table.Th>
+              <Table.Th></Table.Th>
             </Table.Tr>
           </Table.Thead>
           <Table.Tbody>{rows}</Table.Tbody>
