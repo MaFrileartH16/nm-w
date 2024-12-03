@@ -4,16 +4,16 @@ import { useForm } from '@inertiajs/react'
 
 const Index = (props) => {
   const form = useForm({
-    code: '',
-    name: '',
-    quantity: '',
-    unit: '',
+    code: props.barang.code,
+    name: props.barang.name,
+    quantity: props.barang.quantity,
+    unit: props.barang.unit,
   })
 
   return (
     <form onSubmit={(e) => {
       e.preventDefault()
-      form.post(route('barang.store'))
+      form.post(route('barang.update', props.barang.id))
     }}>
       <AppLayout title="Barang" authed={props.auth.user} meta={props.meta}>
         <Flex justifyContent="end" p={16}>
@@ -27,6 +27,7 @@ const Index = (props) => {
               const code = e.target.value
               form.setData('code', code)
             }}
+            value={form.data.code}
           />
 
           <TextInput
@@ -35,6 +36,7 @@ const Index = (props) => {
               const name = e.target.value
               form.setData('name', name)
             }}
+            value={form.data.name}
           />
 
           <TextInput
@@ -43,6 +45,7 @@ const Index = (props) => {
               const quantity = e.target.value
               form.setData('quantity', quantity)
             }}
+            value={form.data.quantity}
           />
 
           <TextInput
@@ -51,6 +54,7 @@ const Index = (props) => {
               const unit = e.target.value
               form.setData('unit', unit)
             }}
+            value={form.data.unit}
           />
         </Box>
       </AppLayout>

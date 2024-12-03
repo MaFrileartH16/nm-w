@@ -2,7 +2,6 @@
   
   namespace App\Http\Controllers;
   
-  use App\Http\Requests\UpdateBarangRequest;
   use App\Models\Barang;
   use Illuminate\Http\Request;
   use Inertia\Inertia;
@@ -55,15 +54,24 @@
      */
     public function edit(Barang $barang)
     {
-      //
+      return Inertia::render('Barang/edit', [
+        'barang' => $barang
+      ]);
     }
     
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBarangRequest $request, Barang $barang)
+    public function update(Barang $request, Barang $barang)
     {
-      //
+      Barang::update([
+        'code' => $request['code'],
+        'name' => $request['name'],
+        'quantity' => intval($request['quantity']),
+        'unit' => $request['unit'],
+      ]);
+      
+      return to_route('barang.index');
     }
     
     /**

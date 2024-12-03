@@ -12,7 +12,7 @@ const Index = (props) => {
       <Table.Td>{element.unit}</Table.Td>
       <Table.Td>
         <Flex gap={16}>
-          <Button><IconEdit /></Button>
+          <Button onClick={() => router.get(route('barang.edit', element))}><IconEdit /></Button>
           <Button onClick={() => router.delete(route('barang.destroy', element))}><IconTrash /></Button>
         </Flex>
       </Table.Td>
