@@ -23,7 +23,7 @@ const Index = (props) => {
             <Table.Tr>
               <Table.Th>Kode</Table.Th>
               <Table.Th>Nama</Table.Th>
-              <Table.Th>Kuatitas</Table.Th>
+              <Table.Th>Kuantitas</Table.Th>
               <Table.Th>Satuan</Table.Th>
             </Table.Tr>
           </Table.Thead>
