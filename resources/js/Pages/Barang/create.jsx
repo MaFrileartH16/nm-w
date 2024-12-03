@@ -6,7 +6,6 @@ const Index = (props) => {
   const form = useForm({
     name: '',
     stock: '',
-    price: 0,
   })
 
   return (
@@ -33,14 +32,6 @@ const Index = (props) => {
             onChange={(e) => {
               const stock = e.target.value
               form.setData('stock', stock)
-            }}
-          />
-
-          <TextInput
-            label="Harga"
-            onChange={(e) => {
-              const price = e.target.value
-              form.setData('price', price)
             }}
           />
         </Box>
